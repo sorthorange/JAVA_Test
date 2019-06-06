@@ -8,7 +8,9 @@ public class Thread01 {
     public static void main(String[] args) {
         God god = new God();
         You you = new You();
-        new Thread(god).start();
+        Thread t = new Thread(god);
+        t.setDaemon(true);
+        t.start();
         new Thread(you).start();
     }
 }
